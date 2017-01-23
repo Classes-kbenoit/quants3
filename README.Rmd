@@ -100,15 +100,13 @@ You can also subscribe to the repository if you have [a GitHub account](https://
 
 #### __*Monday, 23 January: Introduction to the data science approach*__
 
-We will use this session to get to know the range of interests and experience students bring to the class, as well as to survey the machine learning approaches to be covered. We will also discuss and demonstrate the R software.  This session will also cover data types and formats, record cleaning, linkage, SQL, and JSON.
+We will use this session to get to know the range of interests and experience students bring to the class, as well as to survey the machine learning approaches to be covered. We will also discuss and demonstrate the R software. 
 
 ##### Resources
 
-* [Lecture Notes](day1/quants3_day1.pdf)
-* [Assignment 1 as R markdown](day1/quants3_assignment1_LASTNAME_FIRSTNAME.Rmd)
-* Assignment 1 **solution** as [R markdown](day1/quants3_assignment1_solution.Rmd)
+* [Lecture Notes](day1/quant3_day1.pdf)
+* [Assignment 1 as R markdown](day1/quant3_assignment1_LASTNAME_FIRSTNAME.Rmd)
 
-<!--- * [The results of the data science quiz](http://htmlpreview.github.com/?https://github.com/kbenoit/quant3/blob/master/day1/data_science_quiz.html) and the [anonymized dataset in .csv format](day1/data_science_quiz_results.csv). -->
 
 ##### Reading:
 
