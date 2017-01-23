@@ -2,8 +2,18 @@
     -   [Overview](#overview)
     -   [Objectives](#objectives)
     -   [Important Specifics](#important-specifics)
+        -   [Computer Software](#computer-software)
+        -   [Main Texts](#main-texts)
+        -   [Instructions for Submitting Homeworks](#instructions-for-submitting-homeworks)
+        -   [Instructions for use of course materials](#instructions-for-use-of-course-materials)
     -   [Course Schedule](#course-schedule)
+        -   [***Monday, 23 January: Introduction to the data science approach***](#monday-23-january-introduction-to-the-data-science-approach)
+        -   [***Monday, 6 February: Rethinking regression as a predictive tool***](#monday-6-february-rethinking-regression-as-a-predictive-tool)
+        -   [***Monday, 20 February: Introduction to machine learning***](#monday-20-february-introduction-to-machine-learning)
+        -   [***Monday, 6 March: Unsupervised learning and dimensional reduction***](#monday-6-march-unsupervised-learning-and-dimensional-reduction)
+        -   [***Monday, 20 March: Text analysis***](#monday-20-march-text-analysis)
     -   [Assessment](#assessment)
+        -   [TBA](#tba)
 
 Quantitative Methods 3: Data Mining and Statistical Learning
 ============================================================
@@ -16,22 +26,25 @@ This repository contains the class materials for Quantitative Methods 3: Data Mi
 
 The class meets Mondays for five sessions, every other Monday, starting 23 January 2017. Times: 12:00 - 15:00.
 
-### Overview
+Overview
+--------
 
 Data Mining and Statistical Learning are exciting new areas that combine scientific inquiry, statistical knowledge, substantive expertise, and computer programming. Good data science requires experts that combine substantive knowledge with data analytical skills, which makes it a prime area for social scientists with an interest in quantitative methods. This course integrates prior training in quantitative methods (statistics) and coding with substantive expertise and introduces the fundamental concepts and techniques of data mining and statistical learning. Examples focus on political science and methods are tailored to areas that are useful for political science research.
 
-### Objectives
+Objectives
+----------
 
 This course aims to provide an introduction to the data science approach to the quantitative analysis of data using the methods of statistical learning, an approach blending classical statistical methods with recent advances in computational and machine learning. We will cover the main analytical methods from this field with hands-on applications using example datasets, so that students gain experience with and confidence in using the methods we cover. We also cover data preparation and processing, including working with structured databases, key-value formatted data (JSON), and unstructured textual data. At the end of this course students will have a sound understanding of the field of data science, the ability to analyse data using some of its main methods, and a solid foundation for more advanced or more specialised study.
 The course will be delivered through a combination of lectures and guided learning through detailed weekly assignments to be completed outside of class.
 
-### Important Specifics
+Important Specifics
+-------------------
 
-#### Computer Software
+### Computer Software
 
 Computer-based exercises will feature prominently in the course, especially in the lab sessions. The use of all software tools will be explained in the sessions, including how to download and install them. All of the class work will be done using R, using publicly available packages.
 
-#### Main Texts
+### Main Texts
 
 The primary texts are:
 
@@ -49,7 +62,7 @@ The following are supplemental texts which you may also find useful:
 -   Hastie et al. (2009) *The Elements of Statistical Learning: Data mining, inference, and prediction*. Springer. Note: The book is available from the authors' page [here](http://statweb.stanford.edu/~tibs/ElemStatLearn/).
 -   Garrett Grolemund and Hadley Wickham (2016) *R for Data Science*, O'Reilly Media, Chapters 1-3. Note: Online version is available from the authors' page [here](http://r4ds.had.co.nz/index.html).
 
-#### Instructions for Submitting Homeworks
+### Instructions for Submitting Homeworks
 
 Each homework will be a single file in the [RMarkdown](http://rmarkdown.rstudio.com) format. The files linked below are *named very carefully*, to make it easy for us to identify your completed lab assignments.
 
@@ -72,7 +85,7 @@ Each homework will be a single file in the [RMarkdown](http://rmarkdown.rstudio.
 
 We will walk you through this process in the Day 1 lab, so don't worry if it seems complicated the first time. This sort of careful workflow process and file management is part of learning practical data science too!
 
-#### Instructions for use of course materials
+### Instructions for use of course materials
 
 You have three options for downloading the course material found on this page:
 
@@ -84,21 +97,20 @@ You have three options for downloading the course material found on this page:
 
 You can also subscribe to the repository if you have [a GitHub account](https://github.com), which will send you updates each time new changes are pushed to the repository.
 
-### Course Schedule
+Course Schedule
+---------------
 
 ------------------------------------------------------------------------
 
-#### ***Monday, 23 January: Introduction to the data science approach***
+### ***Monday, 23 January: Introduction to the data science approach***
 
-We will use this session to get to know the range of interests and experience students bring to the class, as well as to survey the machine learning approaches to be covered. We will also discuss and demonstrate the R software. This session will also cover data types and formats, record cleaning, linkage, SQL, and JSON.
+We will use this session to get to know the range of interests and experience students bring to the class, as well as to survey the machine learning approaches to be covered. We will also discuss and demonstrate the R software.
 
 ##### Resources
 
--   [Lecture Notes](day1/quants3_day1.pdf)
--   [Assignment 1 as R markdown](day1/quants3_assignment1_LASTNAME_FIRSTNAME.Rmd)
--   Assignment 1 **solution** as [R markdown](day1/quants3_assignment1_solution.Rmd)
+-   [Lecture Notes](day1/quant3_day1.pdf)
+-   [Assignment 1 as R markdown](day1/quant3_assignment1_LASTNAME_FIRSTNAME.Rmd)
 
-<!--- * [The results of the data science quiz](http://htmlpreview.github.com/?https://github.com/kbenoit/quant3/blob/master/day1/data_science_quiz.html) and the [anonymized dataset in .csv format](day1/data_science_quiz_results.csv). -->
 ##### Reading:
 
 -   James et al (2013), Chapters 1--2. Note: The book is available from the authors' page [here](http://www-bcf.usc.edu/~gareth/ISL/).
@@ -112,7 +124,7 @@ We will use this session to get to know the range of interests and experience st
 
 ------------------------------------------------------------------------
 
-#### ***Monday, 6 February: Rethinking regression as a predictive tool***
+### ***Monday, 6 February: Rethinking regression as a predictive tool***
 
 Linear regression model and supervised learning. Revisiting prediction for the classical regression model, including logistic regression. Prediction v. association and causation.
 
@@ -132,7 +144,7 @@ Linear regression model and supervised learning. Revisiting prediction for the c
 
 ------------------------------------------------------------------------
 
-#### ***Monday, 20 February: Introduction to machine learning***
+### ***Monday, 20 February: Introduction to machine learning***
 
 Naive Bayes classifier, k-Nearest Neighbour, Support Vector Machines, evaluating model performance.
 
@@ -152,7 +164,7 @@ Naive Bayes classifier, k-Nearest Neighbour, Support Vector Machines, evaluating
 
 ------------------------------------------------------------------------
 
-#### ***Monday, 6 March: Unsupervised learning and dimensional reduction***
+### ***Monday, 6 March: Unsupervised learning and dimensional reduction***
 
 Cluster analysis, PCA, correspondence analysis, association rules.
 
@@ -178,7 +190,7 @@ Cluster analysis, PCA, correspondence analysis, association rules.
 
 ------------------------------------------------------------------------
 
-#### ***Monday, 20 March: Text analysis***
+### ***Monday, 20 March: Text analysis***
 
 Working with text in R, sentiment analysis, dictionary methods.
 
@@ -199,6 +211,7 @@ Working with text in R, sentiment analysis, dictionary methods.
 -   Spirling, A. (2012), \`\`U.S. Treaty Making with American Indians: Institutional Change and Relative Power, 1784–1911.'' *American Journal of Political Science*, 56: 84--97.
 -   Herzog, A. and K. Benoit (2015), \`\`The most unkindest cuts: Speaker selection and expressed government dissent during economic crisis.'' *Journal of Politics*, 77(4):1157--1175.
 
-### Assessment
+Assessment
+----------
 
 #### TBA
