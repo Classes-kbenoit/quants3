@@ -81,9 +81,9 @@ Each homework will be a single file in the [RMarkdown](http://rmarkdown.rstudio.
 
 3.  From RStudio, you can create an HTML output file with your evaluated code, figure, and text answers by clicking the "Knit HTML" button in the top of the editor pane in RStudio. The resulting HTML file will be saved in your working directory.
 
-4.  You will need to upload the resulting HTML file -- renamed! -- to the [course Moodle page](https://shortcourses.lse.ac.uk/course/view.php?id=158), to the appropriate assignment folder.
+4.  You will need to email the completed file to me at <kbenoit@tcd.ie>.
 
-We will walk you through this process in the Day 1 lab, so don't worry if it seems complicated the first time. This sort of careful workflow process and file management is part of learning practical data science too!
+Don't worry if it seems complicated the first time. This sort of careful workflow process and file management is part of learning practical data science too.
 
 ### Instructions for use of course materials
 
@@ -121,6 +121,14 @@ We will use this session to get to know the range of interests and experience st
 
 -   Patrick Burns, 2011. *The R Inferno*. Available [here](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf).
 -   Lantz, Ch. 2, 12.
+
+##### Data Science quiz
+
+From class - find it [here](day1/data_science_quiz.md).
+
+##### Exercise
+
+[Exercise 1](day1/quant3_assignment1_LASTNAME_FIRSTNAME.Rmd)
 
 ------------------------------------------------------------------------
 
