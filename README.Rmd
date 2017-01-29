@@ -120,6 +120,14 @@ We will use this session to get to know the range of interests and experience st
 * Patrick Burns, 2011. _The R Inferno_.  Available [here](http://www.burns-stat.com/pages/Tutor/R_inferno.pdf).
 * Lantz, Ch. 2, 12.
 
+##### Data Science quiz
+
+From class - find it [here](day1/data_science_quiz.md).
+
+##### Exercise
+
+[Exercise 1](day1/quant3_assignment1_LASTNAME_FIRSTNAME.Rmd)
+
 ***
 
 ### __*Monday, 6 February: Rethinking regression as a predictive tool*__
