@@ -150,6 +150,10 @@ Linear regression model and supervised learning. Revisiting prediction for the c
 -   Zumel and Mount, Chapter 7.1.
 -   Conway, Drew, and John White. 2012. *Machine Learning for Hackers*. O’Reilly. Chapter 5, “Regression: Predicting Page Views”.
 
+##### Exercise
+
+[Exercise 2](day2/quant3_assignment2_LASTNAME_FIRSTNAME.Rmd)
+
 ------------------------------------------------------------------------
 
 ### ***Monday, 20 February: Introduction to machine learning***
