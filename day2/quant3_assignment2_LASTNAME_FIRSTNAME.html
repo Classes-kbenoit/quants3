@@ -122,57 +122,79 @@ $(document).ready(function () {
 </div>
 
 
-<p>Assignments for the course focus on practical aspects of the concepts covered in the lectures. Assignments are based on the material covered in James et al. You will start working on the assignment in the lab sessions after the lectures, but may need to finish them after class.</p>
-<p>Please submit your assignments via Moodle by 7pm on the day of the class. We will subsequently open up solutions to the problem sets.</p>
-<p>You will need to load the package from the course textbook:</p>
-<pre class="r"><code>library(ISLR)</code></pre>
-<div id="exercise-3.1" class="section level2">
-<h2>Exercise 3.1</h2>
-<p>This question involves the use of multiple linear regression on the <code>Auto</code> data set.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Produce a scatterplot matrix which includes all of the variables in the data set.</p></li>
-<li><p>Compute the matrix of correlations between the variables using the function <code>cor()</code>. You will need to exclude the <code>name</code> variable, which is qualitative.</p></li>
-<li><p>Use the <code>lm()</code> function to perform a multiple linear regression with <code>mpg</code> as the response and all other variables except <code>name</code> as the predictors. Use the <code>summary()</code> function to print the results. Comment on the output. For instance:</p>
-<ol style="list-style-type: lower-roman">
-<li>Is there a relationship between the predictors and the response?</li>
-<li>Which predictors appear to have a statistically significant relationship to the response?</li>
-<li>What does the coefficient for the <code>year</code> variable suggest?</li>
+<p>For this exercise, you should work with the file <code>dail2002.dta</code> from the article Kenneth Benoit and Michael Marsh. 2008. “<a href="http://www.kenbenoit.net/pdfs/ajps_348.pdf">The Campaign Value of Incumbency: A New Solution to the Puzzle of Less Effective Incumbent Spending.</a>” <em>American Journal of Political Science</em> 52(4, October): 874-890.</p>
+<p>Load the Stata dataset used in this paper, available from <a href="http://www.kenbenoit.net/files/dail2002.dta" class="uri">http://www.kenbenoit.net/files/dail2002.dta</a>. To load this into R, you will need the <code>read.dta</code> command from the <code>foreign</code> package. (Note that you can load straight from the URL using this command.) Call this data object <code>dail2002</code>.</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Partitioning the dataset into “folds”.</strong> For this exercise, we will be fitting a model from a subset of the data, and using the fitted model to predict the outcomes from the “left out” set and using that to evaluate RMSE or accuracy.</p>
+<ol style="list-style-type: decimal">
+<li><p>To start, familiarize yourself with the <code>sample()</code> command to draw a random sample of one-fifth of the observations in the <code>dail2002.dta</code> dataset. Use a <code>.Random.seed</code> and read about this function to see what it does. Why should you use this?</p></li>
+<li><p>For the categorical predictions, we will also assess predictive ability based on “leave-one-out” testing and using “folds”, which are groups of observations that have been left out of the training set, and then attempting to predict them with accuracy. You will need to use indexing to partition the dataset to carry this out. You might want to write a loop for this. For instance, to partition a group of 20 observations into four sets, you could use the following <code>for</code> loop:</p></li>
+</ol>
+<pre class="r"><code>n &lt;- 20
+k &lt;- 4
+data &lt;- data.frame(myIndex = 1:n, letter = LETTERS[1:n])
+size &lt;- n/4
+if (n %% 4)
+    stop(&quot;n not divisible by k&quot;)
+for (i in 1:k) {
+    startIndex &lt;- 1 + (i-1)*size
+    endIndex &lt;- startIndex + size - 1
+    cat(startIndex, endIndex, &quot;\n&quot;)
+    print(data[startIndex : endIndex, ])
+}</code></pre>
+<pre><code>## 1 5 
+##   myIndex letter
+## 1       1      A
+## 2       2      B
+## 3       3      C
+## 4       4      D
+## 5       5      E
+## 6 10 
+##    myIndex letter
+## 6        6      F
+## 7        7      G
+## 8        8      H
+## 9        9      I
+## 10      10      J
+## 11 15 
+##    myIndex letter
+## 11      11      K
+## 12      12      L
+## 13      13      M
+## 14      14      N
+## 15      15      O
+## 16 20 
+##    myIndex letter
+## 16      16      P
+## 17      17      Q
+## 18      18      R
+## 19      19      S
+## 20      20      T</code></pre>
+<p>What is the purpose of the line <code>if (n %% 4)</code>?</p></li>
+<li><p><strong>OLS regression for prediction.</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Fit a regression from the dataset to predict <code>votes1st</code>. You may use any combination of regressors that you wish. Save the model object to <code>reg2_1</code>.</p></li>
+<li><p>Predict the <code>votes1st</code> from the same sample to which you fitted the regression. What is the Root Mean Squared Error (RMSE) and how would you interpret this?</p></li>
+<li><p>Drop the incumbency variable – that you hopefully included in your answer to 2.1! – and repeat steps 2.1–2.2. Compute a new RMSE and compare this to the previous one. Which is a better predictor?</p></li>
 </ol></li>
-<li><p>Use the <code>plot()</code> function to produce diagnostic plots of the linear regression fit. Comment on any problems you see with the fit. Do the residual plots suggest any unusually large outliers? Does the leverage plot identify any observations with unusually high leverage?</p></li>
-<li><p>Use the <code>*</code> and <code>:</code> symbols to fit linear regression models with interaction effects. Do any interactions appear to be statistically significant?</p></li>
-<li><p>Try a few different transformations of the variables, such as <span class="math inline">\(log(X)\)</span>, <span class="math inline">\(\sqrt{X}\)</span>, <span class="math inline">\(X^2\)</span>. Comment on your findings.</p></li>
+<li><p><strong>Logistic regression for prediction</strong>.</p>
+<ol style="list-style-type: decimal">
+<li><p>Fit a logistic regression (hint: use <code>glm()</code>) to predict the outcome variable <code>wonseat</code>. Use any specification that you think provides a good prediction.</p></li>
+<li><p>For the full sample, compute:</p>
+<ul>
+<li>a table of actual <code>wonseat</code> by predicted <code>wonseat</code></li>
+<li>percent correctly predicted</li>
+<li>precision</li>
+<li>recall</li>
+</ul></li>
+<li><p>Comparing two models.</p>
+<ul>
+<li><p>Compute an 8-fold validation, where for 8 different training sets consisting of 7/8 of the observations, you predict the other held-out 1/8 and compare the actual to predicted for the 1/8 test set. Compute an average F1 score for the 8 models.</p></li>
+<li><p>Now drop a variable or two, and repeat the previous step to compare the average F1 score for this model.</p></li>
+<li><p>Why is it valuable to use the different folds here, rather than simply comparing the F1 score for the predicted outcome of the entire sample, fit to the entire sample?</p></li>
+</ul></li>
+</ol></li>
 </ol>
-</div>
-<div id="exercise-3.2" class="section level2">
-<h2>Exercise 3.2</h2>
-<p>This question should be answered using the <code>Carseats</code> dataset from the <code>ISLR</code> package.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Fit a multiple regression model to predict <code>Sales</code> using <code>Price</code>, <code>Urban</code>, and <code>US</code>.</p></li>
-<li><p>Provide an interpretation of each coefficient in the model. Be careful – some of the variables in the model are qualitative!</p></li>
-<li><p>Write out the model in equation form, being careful to handle the qualitative variables properly.</p></li>
-<li><p>For which of the predictors can you reject the null hypothesis <span class="math inline">\(H_0 : \beta_j =0\)</span>?</p></li>
-<li><p>On the basis of your response to the previous question, fit a smaller model that only uses the predictors for which there is evidence of association with the outcome.</p></li>
-<li><p>How well do the models in (a) and (e) fit the data?</p></li>
-<li><p>Using the model from (e), obtain 95% confidence intervals for the coefficient(s).</p></li>
-<li><p>Is there evidence of outliers or high leverage observations in the model from (e)?</p></li>
-</ol>
-</div>
-<div id="exercise-3.3" class="section level2">
-<h2>Exercise 3.3</h2>
-<p>In this exercise you will create some simulated data and will fit simple linear regression models to it. Make sure to use <code>set.seed(1)</code> prior to starting part (a) to ensure consistent results.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Using the <code>rnorm()</code> function, create a vector, <code>x</code>, containing 100 observations drawn from a <span class="math inline">\(N(0,1)\)</span> distribution. This represents a feature, <code>X</code>.</p></li>
-<li><p>Using the <code>rnorm()</code> function, create a vector, <code>eps</code>, containing 100 observations drawn from a <span class="math inline">\(N(0,0.25)\)</span> distribution i.e. a normal distribution with mean zero and variance 0.25.</p></li>
-<li><p>Using <code>x</code> and <code>eps</code>, generate a vector <code>y</code> according to the model <span class="math display">\[Y = -1 + 0.5X + \epsilon\]</span> What is the length of the vector <code>y</code>? What are the values of <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> in this linear model?</p></li>
-<li><p>Create a scatterplot displaying the relationship between <code>x</code> and <code>y</code>. Comment on what you observe.</p></li>
-<li><p>Fit a least squares linear model to predict <code>y</code> using <code>x</code>. Comment on the model obtained. How do <span class="math inline">\(\hat{\beta}_0\)</span> and <span class="math inline">\(\hat{\beta}_1\)</span> compare to <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>?</p></li>
-<li><p>Display the least squares line on the scatterplot obtained in (d). Draw the population regression line on the plot, in a different color. Use the <code>legend()</code> command to create an appropriate legend.</p></li>
-<li><p>Now fit a polynomial regression model that predicts <span class="math inline">\(y\)</span> using <span class="math inline">\(x\)</span> and <span class="math inline">\(x^2\)</span>. Is there evidence that the quadratic term improves the model fit? Explain your answer.</p></li>
-<li><p>Repeat (a)-(f) after modifying the data generation process in such a way that there is less noise in the data. The model should remain the same. You can do this by decreasing the variance of the normal distribution used to generate the error term <span class="math inline">\(\epsilon\)</span> in (b). Describe your results.</p></li>
-<li><p>Repeat (a)-(f) after modifying the data generation process in such a way that there is more noise in the data. The model should remain the same. You can do this by increasing the variance of the normal distribution used to generate the error term <span class="math inline">\(\epsilon\)</span> in (b). Describe your results.</p></li>
-<li><p>What are the confidence intervals for <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> based on the original data set, the noisier data set, and the less noisy data set? Comment on your results.</p></li>
-</ol>
-</div>
 
 
 
