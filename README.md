@@ -174,6 +174,10 @@ Naive Bayes classifier, k-Nearest Neighbour, Support Vector Machines, evaluating
 -   Lesmeister, Chapter 3.
 -   Zumel and Mount, Chapters 5, 6, 7.2.
 
+##### Exercise
+
+[Exercise 3](day3/quant3_assignment3_LASTNAME_FIRSTNAME.Rmd)
+
 ------------------------------------------------------------------------
 
 ### ***Monday, 6 March: Unsupervised learning and dimensional reduction***
