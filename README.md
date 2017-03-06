@@ -186,12 +186,11 @@ Cluster analysis, PCA, correspondence analysis, association rules.
 
 ##### Resources
 
--   [Lecture Notes](day7/quant3_day7.pdf)
--   [Assignment 7 as R markdown](day7/quant3_assignment7_LASTNAME_FIRSTNAME.Rmd)
+-   [Lecture Notes](day4/quant3_day4.pdf)
+-   [Assignment 4 as R markdown](day4/quant3_assignment4_LASTNAME_FIRSTNAME.Rmd)
 -   Association rule mining code example
-    -   [R code](day7/apriori_example.R)
+    -   [R code](day4/apriori_example.R)
     -   [book dataset for example](https://github.com/WinVector/zmPDSwR/raw/master/Bookdata/bookdata.tsv.gz)
--   Assignment 7 **solution** as [R markdown](day7/quant3_assignment7_solution.Rmd)
 
 ##### Required reading:
 
